@@ -1,0 +1,219 @@
+<div class="justify-content-center component-margin-top">
+    <h5>Welcome to Profile !!</h5>
+    <div class="card-body bg-secondary">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">Title</label>
+                    <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+                        <option value=""></option>
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Miss">Miss</option>
+                    </select>
+                    <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                        <div *ngIf="f.title.errors.required">Title is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label class="control-label required">First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label class="control-label required">Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">Date of Birth</label>
+                    <input type="date" formControlName="dob" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                    <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                        <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
+                        <div *ngIf="f.dob.errors.pattern">Date of Birth must be a valid date in the format YYYY-MM-DD</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">Email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">Contact Number</label>
+                    <input type="text" formControlName="phoneNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNo.errors }" />
+                    <div *ngIf="submitted && f.phoneNo.errors" class="invalid-feedback">
+                        <div *ngIf="f.phoneNo.errors.required">Phone No is required</div>
+                        <div *ngIf="f.phoneNo.errors.minlength">Enter correct phone No</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">Fresher/Experience</label>
+                    <select formControlName="workExp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.workExp.errors }">
+                        <option value=""></option>
+                        <option value="Fresher">Fresher</option>
+                        <option value="Experience">Experience</option>
+                    </select>
+                    <div *ngIf="submitted && f.workExp.errors" class="invalid-feedback">
+                        <div *ngIf="f.workExp.errors.required">workExp is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">Designation</label>
+                    <input type="text" formControlName="designation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.designation.errors }" />
+                    <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
+                        <div *ngIf="f.designation.errors.required">Designation is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">Description</label>
+                    <textarea cols = "20" rows ="5" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+                    <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                        <div *ngIf="f.description.errors.required">Description is required</div>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary ml-5 mr-5 mt-5 mb-5" /> 
+            <div class="form-row">
+                <div class="form-group col">
+                    <h5>Education Details !!</h5>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">10th Pass Year</label>
+                    <input type="text" formControlName="TenYear" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.TenYear.errors }" />
+                    <div *ngIf="submitted && f.TenYear.errors" class="invalid-feedback">
+                        <div *ngIf="f.TenYear.errors.required">10th year passing is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">10th School/Institue Name</label>
+                    <input type="text" formControlName="tenSchool" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tenSchool.errors }" />
+                    <div *ngIf="submitted && f.tenSchool.errors" class="invalid-feedback">
+                        <div *ngIf="f.tenSchool.errors.required">10th School Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">10th Grade</label>
+                    <input type="text" formControlName="TenGrade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.TenGrade.errors }" />
+                    <div *ngIf="submitted && f.TenGrade.errors" class="invalid-feedback">
+                        <div *ngIf="f.TenGrade.errors.required">10th grade is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">10th Field Name</label>
+                    <input type="text" formControlName="tenField" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tenField.errors }" />
+                    <div *ngIf="submitted && f.tenField.errors" class="invalid-feedback">
+                        <div *ngIf="f.tenField.errors.required">10th Field Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">12th Pass Year</label>
+                    <input type="text" formControlName="TwelthYear" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.TwelthYear.errors }" />
+                    <div *ngIf="submitted && f.TwelthYear.errors" class="invalid-feedback">
+                        <div *ngIf="f.TwelthYear.errors.required">12th year passing is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">12th School/Institue Name</label>
+                    <input type="text" formControlName="TwelthSchool" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.TwelthSchool.errors }" />
+                    <div *ngIf="submitted && f.TwelthSchool.errors" class="invalid-feedback">
+                        <div *ngIf="f.TwelthSchool.errors.required">12th School Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">12th Grade</label>
+                    <input type="text" formControlName="TwelthGrade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.TwelthGrade.errors }" />
+                    <div *ngIf="submitted && f.TwelthGrade.errors" class="invalid-feedback">
+                        <div *ngIf="f.TwelthGrade.errors.required">12th grade is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">12th Field Name</label>
+                    <input type="text" formControlName="TwelthField" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.TwelthField.errors }" />
+                    <div *ngIf="submitted && f.TwelthField.errors" class="invalid-feedback">
+                        <div *ngIf="f.TwelthField.errors.required">12th Field Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">Graducation Pass Year</label>
+                    <input type="text" formControlName="graducationYear" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.graducationYear.errors }" />
+                    <div *ngIf="submitted && f.graducationYear.errors" class="invalid-feedback">
+                        <div *ngIf="f.graducationYear.errors.required">12th year passing is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">Graducation School/Institue Name</label>
+                    <input type="text" formControlName="graducationSchool" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.graducationSchool.errors }" />
+                    <div *ngIf="submitted && f.graducationSchool.errors" class="invalid-feedback">
+                        <div *ngIf="f.graducationSchool.errors.required">Graducation School Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label required">Graducation Grade</label>
+                    <input type="text" formControlName="graducationGrade" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.graducationGrade.errors }" />
+                    <div *ngIf="submitted && f.graducationGrade.errors" class="invalid-feedback">
+                        <div *ngIf="f.graducationGrade.errors.required">Graducation grade is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">Graducation Field Name</label>
+                    <input type="text" formControlName="graducationField" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.graducationField.errors }" />
+                    <div *ngIf="submitted && f.graducationField.errors" class="invalid-feedback">
+                        <div *ngIf="f.graducationField.errors.required">Graducation Field Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary ml-5 mr-5 mt-5 mb-5" /> 
+            <div class="form-row" *ngIf="f.workExp.value == 'Experience'">
+                <div class="form-group col">
+                    <h5>Work Details !!</h5>
+                </div>
+            </div>
+            <div class="form-row" *ngIf="f.workExp.value == 'Experience'">
+                <div class="form-group col">
+                    <label class="control-label required">Skill Set</label>
+                    <textarea cols = "20" rows ="5" formControlName="skillSet" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.skillSet.errors }"></textarea>
+                    <div *ngIf="submitted && f.skillSet.errors" class="invalid-feedback">
+                        <div *ngIf="f.skillSet.errors.required">Skill Set is required</div>
+                    </div>
+                </div>
+                <div class="form-group col">
+                    <label class="control-label required">Project Details</label>
+                    <textarea cols = "20" rows ="5" formControlName="projectDetails" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.projectDetails.errors }"></textarea>
+                    <div *ngIf="submitted && f.projectDetails.errors" class="invalid-feedback">
+                        <div *ngIf="f.projectDetails.errors.required">Project Details is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Register</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  
